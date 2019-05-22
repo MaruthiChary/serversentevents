@@ -1,0 +1,17 @@
+<html>
+<head></head>
+<script type="text/javascript">
+const eventSource = new EventSource("/register?event=message");
+eventSource.onmessage = function(e) {
+	  alert(e.data);
+	}
+var x = Math.floor((Math.random() * 10) + 1);
+x+"";
+const eventSource1 = new EventSource("/register?event="+x);
+eventSource1.addEventListener(x,function(r){
+	alert("listening on one to one")
+	alert(r.data)
+})
+</script>
+<body></body>
+</html>
